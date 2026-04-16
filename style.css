@@ -457,6 +457,223 @@ em     { font-style: italic; }
 .arrow-links a { font-size: 0.84rem; color: var(--soft); }
 .arrow-links a:hover { color: var(--teal); text-decoration: none; }
 
+/* ── TIMELINE ── */
+.timeline {
+  margin: 1.5rem 0 0;
+  position: relative;
+  padding-left: 1.4rem;
+  border-left: 1px solid var(--rule);
+}
+
+.timeline-item {
+  position: relative;
+  padding: 0.55rem 0 0.85rem 0.3rem;
+}
+
+.timeline-item:last-child { padding-bottom: 0.2rem; }
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -1.75rem;
+  top: 0.95rem;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--teal);
+  border: 2px solid var(--paper);
+  box-shadow: 0 0 0 1px var(--rule);
+}
+
+.timeline-item.highlight::before {
+  background: var(--gold);
+}
+
+.timeline-date {
+  font-size: 0.72rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+  display: block;
+  margin-bottom: 0.15rem;
+}
+
+.timeline-title {
+  font-size: 0.92rem;
+  color: var(--text);
+  font-weight: 500;
+  line-height: 1.5;
+  display: block;
+  margin-bottom: 0.15rem;
+}
+
+.timeline-desc {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.timeline-desc a { color: var(--blue); }
+
+/* ── ARTICLE CARDS (Medium previews) ── */
+.article-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 1.2rem 0 1.5rem;
+}
+
+.article-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
+  text-decoration: none;
+  color: inherit;
+}
+
+.article-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--teal);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+  text-decoration: none;
+}
+
+.article-thumb {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+  background: var(--faint);
+}
+
+.article-body {
+  padding: 0.85rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.article-date {
+  font-size: 0.7rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  margin-bottom: 0.35rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.article-title {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.4;
+  margin-bottom: 0.4rem;
+}
+
+.article-card:hover .article-title { color: var(--teal); }
+
+.article-excerpt {
+  font-size: 0.79rem;
+  color: var(--muted);
+  line-height: 1.55;
+  flex: 1;
+}
+
+.article-more {
+  margin-top: 1rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.article-more a { color: var(--blue); }
+
+@media (max-width: 520px) {
+  .article-grid { grid-template-columns: 1fr; }
+}
+
+/* ── VIOLIN PERFORMANCE TIMELINE ── */
+.perf-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 1.2rem 0 1.5rem;
+}
+
+.perf-card {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 1rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.perf-card:hover {
+  border-color: var(--warm);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+}
+
+.perf-date {
+  font-size: 0.7rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
+  text-transform: uppercase;
+}
+
+.perf-title {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.perf-venue {
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.perf-links {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.perf-links a {
+  font-size: 0.73rem;
+  color: var(--soft);
+  border: 1px solid var(--rule);
+  padding: 0.15rem 0.6rem;
+  border-radius: 100px;
+  background: var(--paper);
+  transition: all 0.15s;
+}
+
+.perf-links a:hover {
+  border-color: var(--warm);
+  color: var(--warm);
+  text-decoration: none;
+}
+
+.perf-links .pending {
+  font-size: 0.73rem;
+  color: var(--muted);
+  font-style: italic;
+  padding: 0.15rem 0.3rem;
+}
+
+@media (max-width: 520px) {
+  .perf-grid { grid-template-columns: 1fr; }
+}
+
 /* ── FOOTER ── */
 footer {
   padding-top: 3rem;
