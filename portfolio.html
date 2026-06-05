@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Portfolio &nbsp;·&nbsp; Sundararaman Rengarajan</title>
+ <link rel="stylesheet" href="style.css">
+ <style>
+ /* Portfolio-specific, building on existing tokens */
+ .case {
+ background: var(--surface);
+ border: 1px solid var(--rule);
+ border-radius: 8px;
+ padding: 1.6rem 1.7rem;
+ margin-bottom: 1.5rem;
+ transition: border-color 0.15s, box-shadow 0.15s;
+ }
+ .case:hover { border-color: var(--teal); box-shadow: 0 4px 18px rgba(0,0,0,0.05); }
+ .case-tag {
+ font-size: 0.66rem; font-weight: 600; text-transform: uppercase;
+ letter-spacing: 0.12em; color: var(--teal); margin-bottom: 0.5rem;
+ }
+ .case-title {
+ font-family: var(--serif); font-size: 1.2rem; font-weight: normal;
+ color: var(--text); line-height: 1.3; margin-bottom: 0.3rem;
+ }
+ .case-role { font-size: 0.8rem; color: var(--muted); font-style: italic; margin-bottom: 1rem; }
+ .case-block { margin-bottom: 0.85rem; }
+ .case-label {
+ font-size: 0.7rem; font-weight: 600; text-transform: uppercase;
+ letter-spacing: 0.08em; color: var(--blue); margin-bottom: 0.2rem; display: block;
+ }
+ .case-block p { font-size: 0.88rem; color: var(--soft); line-height: 1.7; margin: 0; }
+ .case-methods { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.3rem; }
+ .case-methods span {
+ font-size: 0.72rem; color: var(--soft); border: 1px solid var(--rule);
+ padding: 0.1rem 0.6rem; border-radius: 100px; background: var(--paper);
+ }
+ .case-links { margin-top: 1rem; display: flex; gap: 0.45rem; flex-wrap: wrap; }
+ .case-links a {
+ font-size: 0.74rem; color: var(--soft); border: 1px solid var(--rule);
+ padding: 0.1rem 0.6rem; border-radius: 2px; background: var(--surface); transition: all 0.12s;
+ }
+ .case-links a:hover { border-color: var(--blue); color: var(--blue); text-decoration: none; }
+ .placeholder { color: var(--warm); font-style: italic; }
+ .intro-note {
+ background: var(--paper); border: 1px solid var(--faint); border-left: 3px solid var(--teal);
+ border-radius: 4px; padding: 0.9rem 1.1rem; font-size: 0.82rem; color: var(--muted);
+ line-height: 1.6; margin-top: 1.4rem;
+ }
+ /* Media block: demo videos and deck */
+ .case-media { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.4rem; }
+ .media-item { display: flex; flex-direction: column; }
+ .media-frame {
+ position: relative; width: 100%; padding-top: 56.25%;
+ border-radius: 6px; overflow: hidden; background: var(--paper); border: 1px solid var(--rule);
+ }
+ .media-frame iframe, .media-frame a.media-cover { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+ a.media-cover {
+ display: flex; flex-direction: column; align-items: center; justify-content: center;
+ gap: 0.45rem; text-align: center; color: var(--soft); text-decoration: none;
+ background: var(--paper); transition: background 0.15s, color 0.15s;
+ }
+ a.media-cover:hover { background: var(--surface); color: var(--blue); }
+ a.media-cover .play { font-size: 1.7rem; line-height: 1; }
+ a.media-cover .lbl { font-size: 0.78rem; font-weight: 600; }
+ a.media-cover .sub-lbl { font-size: 0.68rem; color: var(--muted); }
+ .media-caption { font-size: 0.74rem; color: var(--muted); margin-top: 0.45rem; line-height: 1.4; }
+ .deck-card {
+ display: flex; align-items: center; gap: 0.9rem; margin-top: 0.4rem;
+ border: 1px solid var(--rule); border-radius: 6px; padding: 0.85rem 1rem;
+ background: var(--surface); transition: border-color 0.15s, box-shadow 0.15s;
+ }
+ .deck-card:hover { border-color: var(--blue); box-shadow: 0 3px 14px rgba(0,0,0,0.05); text-decoration: none; }
+ .deck-icon {
+ flex: 0 0 auto; width: 38px; height: 38px; border-radius: 6px;
+ background: var(--paper); border: 1px solid var(--rule);
+ display: flex; align-items: center; justify-content: center; color: var(--teal);
+ }
+ .deck-text { display: flex; flex-direction: column; gap: 0.1rem; }
+ .deck-title { font-size: 0.82rem; font-weight: 600; color: var(--text); }
+ .deck-sub { font-size: 0.72rem; color: var(--muted); }
+ @media (max-width: 560px) { .case-media { grid-template-columns: 1fr; } }
+ </style>
+</head>
+<body>
+
+<div class="top-rule"></div>
+
+<nav class="site-nav">
+ <a href="index.html" class="brand">Sundararaman Rengarajan</a>
+ <a href="about.html">About</a>
+ <a href="work.html">Work</a>
+ <a href="portfolio.html" class="on">Portfolio</a>
+ <a href="notes.html">Notes</a>
+ <a href="life.html">Life</a>
+ <a href="https://scholar.google.com/citations?hl=en&user=uG3noJkAAAAJ" target="_blank" class="ext">Scholar</a>
+</nav>
+
+<div class="wrapper">
+
+ <div class="page-top">
+ <h1>Portfolio</h1>
+ <p class="sub">Selected research projects &nbsp;·&nbsp; question, method, finding, impact</p>
+ </div>
+
+ <div class="section">
+ <p>
+ A selection of research projects framed around what I usually care about most:
+ the question we needed to answer, the methods I chose and why, what we learned,
+ and the decisions the work informed. Each draws on study designs, mixed methods,
+ and quantitative analysis I led end to end.
+ </p>
+
+ <!-- ============ CASE 1: SUGAR SLAY ============ -->
+ <div class="case">
+ <div class="case-tag">Digital health &nbsp;·&nbsp; mixed methods &nbsp;·&nbsp; 2021&ndash;present</div>
+ <div class="case-title">Sugar Slay: research behind a gamified decision-support app for Type 1 diabetes</div>
+ <div class="case-role">Founder &amp; Lead Researcher &nbsp;·&nbsp; Mith.AI / Sugar Slay (Northeastern startup)</div>
+
+ <div class="case-block">
+ <span class="case-label">Question</span>
+ <p>How do people with Type 1 diabetes, and the clinicians and caregivers around them,
+ actually make daily management decisions, and where could a gamified tool genuinely help
+ rather than add burden?</p>
+ </div>
+
+ <div class="case-block">
+ <span class="case-label">Method</span>
+ <p>End-to-end research program: a structured discovery effort of 110+ semi-structured
+ interviews across patients, clinicians, caregivers, and payers; a moderated, task-based
+ usability study of the app; and survey design and analysis of self-reported outcomes.</p>
+ <div class="case-methods">
+ <span>Interviews (110+)</span><span>Usability testing</span><span>Survey design</span>
+ <span>Thematic analysis</span><span>Behavioral data</span>
+ </div>
+ </div>
+
+ <div class="case-block">
+ <span class="case-label">Finding</span>
+ <p>Three studies converged on a clear picture. In the ML evaluation on the OhioT1DM benchmark, a Sequence-to-Sequence BiLSTM gave the most consistent glucose forecasts across subjects (mean RMSE 21.9 mg/dL at 30 minutes), which set the prediction engine. Usability testing (7 participants) showed strong acceptance of the glucose-forecast feature (71% would use it daily) but flagged that the initial gamification display felt overwhelming. And need-finding with 6 caregivers surfaced a core tension: supporters wanted safety without surveillance, preferring "status at a glance" and gentle nudges over raw data streams.</p>
+ </div>
+
+ <div class="case-block">
+ <span class="case-label">Impact</span>
+ <p>The research directly shaped the product. The forecast findings drove a progressive-unlocking redesign of the gamification and clearer prediction explanations; the caregiver insights became an entire companion app, Sugar Slay Care, built around role-based, user-controlled data permissions rather than always-on monitoring. The work was published as a first-author paper in <em>Frontiers in Digital Health</em> and supported by ~$86K in non-dilutive funding (Northeastern SPARK, MassVentures Acorn, NSF i-Corps).</p>
+ </div>
+
+ <div class="case-block">
+ <span class="case-label">Demo</span>
+ <div class="case-media">
+ <div class="media-item">
+ <div class="media-frame">
+ <a class="media-cover" href="https://drive.proton.me/urls/D0CDSZQF1R#I5P10Taoqxj8" target="_blank" rel="noopener">
+ <span class="play">&#9658;</span>
+ <span class="lbl">Sugar Slay app</span>
+ <span class="sub-lbl">Watch demo &nbsp;·&nbsp; opens in new tab</span>
+ </a>
+ </div>
+ <p class="media-caption">The patient app: glucose forecasting, gamified challenges, and progress tracking.</p>
+ </div>
+ <div class="media-item">
+ <div class="media-frame">
+ <iframe src="https://www.youtube.com/embed/vg3b70im_PM" title="Sugar Slay Care demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+ </div>
+ <p class="media-caption">Sugar Slay Care: the companion app for caregivers, with role-based, user-controlled permissions.</p>
+ </div>
+ </div>
+ <a class="deck-card" href="Sugar_Slay_Acorn_Presentation.pdf" target="_blank" rel="noopener">
+ <span class="deck-icon">
+ <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:currentColor"><path d="M6 2a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6H6zm7 1.5L18.5 9H13V3.5zM8 13h8v1.5H8V13zm0 3h8v1.5H8V16zm0-6h4v1.5H8V10z"/></svg>
+ </span>
+ <span class="deck-text">
+ <span class="deck-title">Sugar Slay overview deck (MassVentures Acorn)</span>
+ <span class="deck-sub">PDF &nbsp;·&nbsp; product, architecture, and design walkthrough</span>
+ </span>
+ </a>
+ </div>
+
+ <div class="case-links">
+ <a href="https://www.frontiersin.org/journals/digital-health/articles/10.3389/fdgth.2026.1779790/abstract" target="_blank">Paper (Frontiers in Digital Health)</a>
+ <a href="Sugar_Slay_Acorn_Presentation.pdf" target="_blank">Overview deck (PDF)</a>
+ <a href="https://news.northeastern.edu/2026/01/14/glucose-tracking-gaming-app/" target="_blank">Northeastern feature</a>
+ </div>
+ </div>
+
+ <!-- ============ CASE 2: ISAGA VR ============ -->
+ <div class="case">
+ <div class="case-tag">Immersive VR &nbsp;·&nbsp; behavioral measurement &nbsp;·&nbsp; 2022</div>
+ <div class="case-title">Studying sensorimotor decision-making in an immersive VR task</div>
+ <div class="case-role">First author &nbsp;·&nbsp; ISAGA 2022 (Springer LNCS)</div>
+
+ <div class="case-block">
+ <span class="case-label">Question</span>
+ <p>How do people resolve conflict between competing goals and motor demands when acting
+ under uncertainty in an immersive environment?</p>
+ </div>
+
+ <div class="case-block">
+ <span class="case-label">Method</span>
+ <p>Designed and built an immersive Virtual Reality phase-matching task combining
+ hand-tracking, eye-tracking, and pupillometry; developed the interactive paradigm in
+ Unity (C#) and analyzed multi-stream behavioral data.</p>
+ <div class="case-methods">
+ <span>VR (Oculus/HTC)</span><span>Eye tracking</span><span>Hand tracking</span>
+ <span>Pupillometry</span><span>Unity / C#</span>
+ </div>
+ </div>
+
+ <div class="case-block">
+ <span class="case-label">Finding</span>
+ <p class="placeholder">[Your specifics: the main behavioral result, what the gaze/hand/pupil
+ data revealed about how people resolved the conflict. One or two sentences.]</p>
+ </div>
+
+ <div class="case-block">
+ <span class="case-label">Impact / relevance</span>
+ <p class="placeholder">[Your specifics: why it matters, e.g. what it implies for designing
+ immersive interfaces, attention demands, or interaction in XR. Tie to product/HCI if you can.]</p>
+ </div>
+
+ <div class="case-links">
+ <a href="https://drive.google.com/file/d/1lQKI9Ff1D7zS3jMSEEq97pi_UgoxYuvZ/view?usp=sharing" target="_blank">Poster</a>
+ </div>
+ </div>
+
+ <!-- ============ CASE 3: AANE ============ -->
+ <div class="case">
+ <div class="case-tag">Applied analytics &nbsp;·&nbsp; stakeholder research &nbsp;·&nbsp; 2024</div>
+ <div class="case-title">Organizational outcomes analysis for a nonprofit</div>
+ <div class="case-role">Data Analyst (Volunteer) &nbsp;·&nbsp; Asperger/Autism Network (AANE)</div>
+
+ <div class="case-block">
+ <span class="case-label">Question</span>
+ <p>How do outcomes differ between current and past clients, and what does that tell
+ leadership about where the organization is and isn't serving people well?</p>
+ </div>
+
+ <div class="case-block">
+ <span class="case-label">Method</span>
+ <p>Independently designed and executed a cohort analysis of 15+ years of private-pay LifeMAP coaching data (2008&ndash;present; 213 active vs 1,165 past clients) across 28 metrics. Integrated data from multiple sources, performed extensive cleaning and de-identification, ran the quantitative analysis, and produced a comprehensive report with professional visualizations for a non-technical leadership audience.</p>
+ <div class="case-methods">
+ <span>Cohort analysis</span><span>Data cleaning &amp; anonymization</span>
+ <span>Descriptive &amp; inferential stats</span><span>Retention curves</span>
+ <span>Data visualization</span><span>Stakeholder reporting</span>
+ </div>
+ </div>
+
+ <div class="case-block">
+ <span class="case-label">Finding</span>
+ <p>The active cohort was far more deeply engaged than past clients (median 47 sessions vs 14; 86.85% pursuing multiple goals vs 61.55%), and a retention-style curve showed active clients remaining in coaching well above past rates at every time point. Engagement was highly concentrated: the most-engaged segment (50+ sessions) was about 46% of active clients but roughly 84% of all coaching hours. Employment, Life Skills, and Independent Living were the dominant goal areas. The analysis also surfaced survivorship and data-quality caveats (missing gender and session-timestamp fields) that shaped how the results should be read.</p>
+ </div>
+
+ <div class="case-block">
+ <span class="case-label">Impact</span>
+ <p>The findings are now informing budgeting and marketing strategy for the LifeMAP program, which generates roughly 30% of the organization's revenue and underwrites many free and low-cost services for the autistic community. This analysis had been a long-standing organizational priority left uncompleted due to its complexity; I designed and delivered it end to end and presented to both the program team and the executive team.</p>
+ </div>
+ </div>
+
+ <div class="intro-note">
+ Note to self (delete before publishing): the Sugar Slay and AANE cases are complete with verified facts.
+ Only the ISAGA case still has <span class="placeholder">[bracketed]</span> Finding and Impact blocks
+ to fill with the study's actual behavioral result and why it matters. Optionally add a screenshot or chart to
+ any case for visual weight.
+ </div>
+
+ <div class="arrow-links" style="margin-top:2rem;">
+ <a href="work.html">Work</a>
+ <a href="notes.html">Notes</a>
+ <a href="life.html">Life</a>
+ </div>
+
+ <footer>
+ <span>© 2026 Sundararaman Rengarajan</span>
+ <span><a href="index.html">Home</a></span>
+ </footer>
+
+</div>
+</body>
+</html>
