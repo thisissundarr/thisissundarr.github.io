@@ -94,6 +94,14 @@
  .deck-text { display: flex; flex-direction: column; gap: 0.1rem; }
  .deck-title { font-size: 0.82rem; font-weight: 600; color: var(--text); }
  .deck-sub { font-size: 0.72rem; color: var(--muted); }
+ .case-fig { margin: 0.6rem 0 0; }
+ .case-fig img {
+ width: 100%; height: auto; display: block; border-radius: 6px;
+ border: 1px solid var(--rule); background: var(--surface);
+ }
+ .case-fig figcaption {
+ font-size: 0.74rem; color: var(--muted); margin-top: 0.5rem; line-height: 1.5;
+ }
  @media (max-width: 560px) { .case-media { grid-template-columns: 1fr; } .skim { gap: 0.35rem; } }
  </style>
 </head>
@@ -157,15 +165,20 @@
 
  <div class="case-block">
  <span class="case-label">Method</span>
- <p>Designed and built an immersive Virtual Reality phase-matching task in Unity (C#) running on
- consumer head-mounted hardware, instrumented with three time-aligned streams: hand tracking,
- eye tracking, and pupillometry. The paradigm introduces a visual perturbation on demand,
- transiently delaying the visual image of either the tracked target or the participant's own
- virtual hand, so that vision and proprioception disagree for a controlled window while behavior
- continues to be recorded. I specified the paradigm, implemented it, ran the sessions, and did
- the analysis.</p>
+ <p>Designed and built an immersive Virtual Reality phase-matching task in Unity (C#) on an
+ HTC Vive Pro Eye with a Leap Motion controller mounted on the front, instrumented with three
+ time-aligned streams: hand tracking, eye tracking, and pupillometry. Participants synchronize a
+ cyclic opening and closing hand movement to a target hand. The paradigm introduces a visual
+ perturbation on demand, transiently delaying the rendered image of either the target hand or the
+ participant's own virtual hand, so that vision and proprioception disagree for a controlled window
+ while behavior continues to be recorded. I specified the paradigm, implemented it, ran the
+ sessions, and did the analysis.</p>
+ <figure class="case-fig">
+ <img src="vr-task.jpg" alt="Top: the participant's view, showing the red target hand and the white virtual hand in closed and open states. Bottom: a participant wearing an HTC Vive Pro Eye headset with a Leap Motion controller mounted on the front, one hand raised in front of the sensor.">
+ <figcaption>The task as the participant sees it (top) and the rig (bottom). The red target hand sets the rhythm; the white hand is the participant's own, rendered from Leap Motion hand tracking. Delaying either one puts vision and proprioception into measurable conflict.</figcaption>
+ </figure>
  <div class="case-methods">
- <span>VR (Oculus/HTC)</span><span>Unity / C#</span><span>Eye tracking</span><span>Hand tracking</span>
+ <span>HTC Vive Pro Eye</span><span>Leap Motion</span><span>Unity / C#</span><span>Eye tracking</span><span>Hand tracking</span>
  <span>Pupillometry</span><span>Sensory conflict</span><span>Latency perturbation</span>
  <span>Dynamic Time Warping</span><span>Active inference</span><span>Kalman filtering</span>
  <span>Prototype build</span>
@@ -230,7 +243,7 @@
 
  <div class="case-block">
  <span class="case-label">Finding</span>
- <p>Three studies converged on a clear picture. In the ML evaluation on the OhioT1DM benchmark, a Sequence-to-Sequence BiLSTM gave the most consistent glucose forecasts across subjects (mean RMSE 21.8 mg/dL at 30 minutes), which set the prediction engine. Usability testing (7 participants) showed strong acceptance of the glucose-forecast feature (71% would use it daily) but flagged that the initial gamification display felt overwhelming. And need-finding with 6 caregivers surfaced a core tension: supporters wanted safety without surveillance, preferring "status at a glance" and gentle nudges over raw data streams.</p>
+ <p>Three studies converged on a clear picture. In the ML evaluation on the OhioT1DM benchmark, a Sequence-to-Sequence BiLSTM gave the most consistent glucose forecasts across subjects (mean RMSE 21.9 mg/dL at 30 minutes), which set the prediction engine. Usability testing (7 participants) showed strong acceptance of the glucose-forecast feature (71% would use it daily) but flagged that the initial gamification display felt overwhelming. And need-finding with 6 caregivers surfaced a core tension: supporters wanted safety without surveillance, preferring "status at a glance" and gentle nudges over raw data streams.</p>
  </div>
 
  <div class="case-block">
